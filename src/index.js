@@ -46,12 +46,54 @@ const renderStadiumList = () => {
   appEl.append(ulEl);
 };
 
-const renderAddStadiumForm = () => {};
+const renderAddStadiumForm = () => {
+  const formEl = document.createElement('form');
+  formEl.setAttribute('class', 'add-stadium-form');
+
+  const nameInput = document.createElement('input');
+
+  nameInput.setAttribute('name', 'name');
+  nameInput.setAttribute('placeholder', 'Enter stadium name...');
+  nameInput.setAttribute('required', 'true');
+
+  const visitedSelect = document.createElement('select');
+  visitedSelect.setAttribute('name', 'visited');
+
+  const visited = ['Yes', 'No'];
+
+  for (const visit of visited) {
+    const optionEl = document.createElement('option');
+    optionEl.innerText = visit;
+    optionEl.setAttribute('value', visit.toLocaleLowerCase());
+    visitedSelect.append(optionEl);
+  }
+
+  const addStadiumButton = document.createElement('button');
+  addStadiumButton.setAttribute('type', 'submit');
+  addStadiumButton.setAttribute('class', 'add-stadium-button');
+  addStadiumButton.innerText = 'ADD STADIUM';
+
+  formEl.append(nameInput, visitedSelect, addStadiumButton);
+
+  formEl.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let date = new Date();
+    const stadium = {
+      name: nameInput.value,
+      date: date.toLocaleDateString(),
+      visited: visitedSelect.value,
+    };
+    // server
+  });
+  appEl.append(formEl);
+};
 
 // MAIN RENDER
 const render = () => {
   appEl.innerHTML = '';
 
+  renderAddStadiumForm();
   renderStadiumList();
 };
 
