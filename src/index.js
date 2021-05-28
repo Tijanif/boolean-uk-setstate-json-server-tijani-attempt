@@ -19,6 +19,10 @@ const renderStadium = (stadium) => {
 
   listEl.innerText = stadium.name;
 
+  const visitedPEl = document.createElement('p');
+  visitedPEl.setAttribute('class', 'visited-stadium');
+  visitedPEl.innerText = `Have you been to this stadium?: ${stadium.visited}`;
+
   const deleteButton = document.createElement('button');
   deleteButton.setAttribute('class', 'delete');
   deleteButton.innerText = 'X';
@@ -29,7 +33,7 @@ const renderStadium = (stadium) => {
     });
     setState({ stadiums: filteredStadiums });
   });
-  listEl.append(deleteButton);
+  listEl.append(visitedPEl, deleteButton);
 
   return listEl;
 };
