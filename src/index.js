@@ -23,6 +23,19 @@ const deleteStadiumFromServer = (stadiumId) => {
     return response.json();
   });
 };
+
+const addStadiumToServer = (stadium) => {
+  return fetch(`http://localhost:3000/stadiums`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(stadium),
+  }).then(function (response) {
+    return response.json();
+  });
+};
+
 // RENDER FUNCTIONS
 const appEl = document.querySelector('#app');
 
@@ -105,7 +118,9 @@ const renderAddStadiumForm = () => {
       date: date.toLocaleDateString(),
       visited: visitedSelect.value,
     };
-    // server
+    addStadiumToServer(stadium).then(function (newStadiumFromServer) {
+      setState({ stadiums: [...state.stadiums, newStadiumFromServer] });
+    });
   });
   appEl.append(formEl);
 };

@@ -1,7 +1,40 @@
 {
   "stadiums": [
-    { "id": 1, "name": "San Siro", "date": "28/05/2021", "visited": "no" },
-    { "id": 2, "name": "Wembley", "date": "28/05/2021", "visited": "yes" },
-    { "id": 3, "name": "Camp Nou", "date": "28/05/2021", "visited": "yes" }
+    {
+      "id": 1,
+      "name": "San Siro",
+      "date": "28/05/2021",
+      "visited": "no"
+    },
+    {
+      "id": 2,
+      "name": "Wembley",
+      "date": "28/05/2021",
+      "visited": "yes"
+    },
+    {
+      "id": 3,
+      "name": "Camp Nou",
+      "date": "28/05/2021",
+      "visited": "yes"
+    },
+    {
+      "name": "Ellen Road",
+      "date": "28/05/2021",
+      "visited": "yes",
+      "id": 4
+    },
+    {
+      "name": "Amsterdam Arena",
+      "date": "28/05/2021",
+      "visited": "no",
+      "id": 5
+    },
+    {
+      "name": "Stamford Bridge",
+      "date": "28/05/2021",
+      "visited": "yes",
+      "id": 6
+    }
   ]
 }
