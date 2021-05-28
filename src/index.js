@@ -1,15 +1,21 @@
 let state = {
-  stadiums: [
-    { id: 1, name: 'San Siro', date: '28/05/2021', visited: 'no' },
-    { id: 2, name: 'Wembley', date: '28/05/2021', visited: 'yes' },
-  ],
+  stadiums: [],
 };
 
 // STATE FUNCTIONS
 const setState = (stadiumToUpdate) => {
   state = { ...state, ...stadiumToUpdate };
+
   render();
 };
+
+// SERVER FUNCTIONS
+const getStadiumsFromServer = () => {
+  return fetch('http://localhost:3000/stadiums').then(function (response) {
+    return response.json();
+  });
+};
+
 // RENDER FUNCTIONS
 const appEl = document.querySelector('#app');
 
@@ -101,4 +107,11 @@ const render = () => {
   renderStadiumList();
 };
 
-render();
+const startApp = () => {
+  render();
+  getStadiumsFromServer().then(function (stadiumsFromServer) {
+    setState({ stadiums: stadiumsFromServer });
+  });
+};
+
+startApp();

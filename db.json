@@ -1,25 +1,7 @@
 {
-  "todos": [
-    {
-      "id": 1,
-      "title": "Buy milk",
-      "date": "28/05/2021",
-      "completed": false,
-      "priority": "medium"
-    },
-    {
-      "id": 2,
-      "title": "Cook dinner",
-      "date": "29/05/2021",
-      "completed": false,
-      "priority": "high"
-    },
-    {
-      "id": 3,
-      "title": "Sleep early",
-      "date": "30/05/2021",
-      "completed": false,
-      "priority": "high"
-    }
+  "stadiums": [
+    { "id": 1, "name": "San Siro", "date": "28/05/2021", "visited": "no" },
+    { "id": 2, "name": "Wembley", "date": "28/05/2021", "visited": "yes" },
+    { "id": 3, "name": "Camp Nou", "date": "28/05/2021", "visited": "yes" }
   ]
 }
