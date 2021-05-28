@@ -16,6 +16,13 @@ const getStadiumsFromServer = () => {
   });
 };
 
+const deleteStadiumFromServer = (stadiumId) => {
+  return fetch(`http://localhost:3000/stadiums/${stadiumId}`, {
+    method: 'DELETE',
+  }).then(function (response) {
+    return response.json();
+  });
+};
 // RENDER FUNCTIONS
 const appEl = document.querySelector('#app');
 
@@ -34,10 +41,14 @@ const renderStadium = (stadium) => {
   deleteButton.innerText = 'X';
 
   deleteButton.addEventListener('click', function () {
-    const filteredStadiums = state.stadiums.filter(function (targetedStadium) {
-      return targetedStadium.id !== stadium.id;
+    deleteStadiumFromServer(stadium.id).then(function () {
+      const filteredStadiums = state.stadiums.filter(function (
+        targetedStadium
+      ) {
+        return targetedStadium.id !== stadium.id;
+      });
+      setState({ stadiums: filteredStadiums });
     });
-    setState({ stadiums: filteredStadiums });
   });
   listEl.append(visitedPEl, deleteButton);
 
