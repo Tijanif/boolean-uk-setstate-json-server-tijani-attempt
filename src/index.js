@@ -93,7 +93,7 @@ const renderAddStadiumForm = () => {
   const visitedSelect = document.createElement('select');
   visitedSelect.setAttribute('name', 'visited');
 
-  const visited = ['Yes', 'No'];
+  const visited = ['yes', 'no'];
 
   for (const visit of visited) {
     const optionEl = document.createElement('option');
