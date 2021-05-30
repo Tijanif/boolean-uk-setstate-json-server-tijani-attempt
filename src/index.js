@@ -104,7 +104,7 @@ const renderAddStadiumForm = () => {
 
   const addStadiumButton = document.createElement('button');
   addStadiumButton.setAttribute('type', 'submit');
-  addStadiumButton.setAttribute('class', 'add-stadium-button');
+  addStadiumButton.setAttribute('class', 'add-button');
   addStadiumButton.innerText = 'Add your Stadium';
 
   formEl.append(nameInput, visitedSelect, addStadiumButton);
