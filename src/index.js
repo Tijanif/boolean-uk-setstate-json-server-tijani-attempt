@@ -86,7 +86,7 @@ const renderAddStadiumForm = () => {
 
   const nameInput = document.createElement('input');
 
-  nameInput.setAttribute('name', 'name');
+  // nameInput.setAttribute('name', 'name');
   nameInput.setAttribute('placeholder', 'Enter stadium name...');
   nameInput.setAttribute('required', 'true');
 
@@ -104,7 +104,7 @@ const renderAddStadiumForm = () => {
 
   const addStadiumButton = document.createElement('button');
   addStadiumButton.setAttribute('type', 'submit');
-  addStadiumButton.setAttribute('class', 'add-button');
+  // addStadiumButton.setAttribute('class', 'add-button');
   addStadiumButton.innerText = 'Add your Stadium';
 
   formEl.append(nameInput, visitedSelect, addStadiumButton);
